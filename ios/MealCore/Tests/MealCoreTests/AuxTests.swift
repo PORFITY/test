@@ -248,3 +248,35 @@ final class ProfilesTests: XCTestCase {
         XCTAssertEqual(Energy.portionFactor(PersonProfile(name: "y"), goal: .balanced), 1.0)
     }
 }
+
+final class OfflineAndPerformanceTests: XCTestCase {
+    func testReplanFromSavedStateWithoutNetwork() throws {
+        // 1. «Онлайн»: строим рацион и сохраняем состояние вместе с предложениями
+        let dir = FileManager.default.temporaryDirectory.appendingPathComponent("off-\(UUID().uuidString)"); defer { try? FileManager.default.removeItem(at: dir) }
+        let offers = Fixtures.offers(Fixtures.products(store: "A"))
+        let stores = [Fixtures.store("A", name: "А", km: 1)]
+        let input = PlanInput(settings: Fixtures.settings(days: 4, budget: 6000), people: [PersonProfile(name: "A")], stores: stores, offers: offers, kitchen: Fixtures.fullKitchen)
+        let plan = try MealPlanner().plan(input)
+        var st = AppState(); st.plans = [plan]; st.currentPlanID = plan.id; st.cachedOffers = offers; st.knownStores = stores; st.kitchen = Fixtures.fullKitchen
+        try StateStore(directory: dir).save(st)
+        // 2. «Офлайн» (новый процесс): читаем с диска и меняем блюдо — сеть не используется нигде
+        guard case .loaded(let back) = StateStore(directory: dir).load(), let p0 = back.currentPlan else { return XCTFail() }
+        let inp = PlanInput(settings: p0.settings, people: p0.people, stores: p0.stores, offers: back.cachedOffers, kitchen: back.kitchen)
+        let engine = AssistantEngine()
+        let out = engine.handle(text: "замени обед в день 2 на что-нибудь с рисом", input: inp, plan: p0)
+        XCTAssertNotNil(out.updatedPlan, out.message)
+        XCTAssertEqual(PlanVerifier.verify(out.updatedPlan!, library: .shared, kitchen: back.kitchen), [])
+    }
+
+    func testPlanningPerformanceBudget() throws {
+        let people = (1...6).map { PersonProfile(name: "P\($0)") }
+        let offers = Fixtures.offers(Fixtures.products(store: "A") + Fixtures.products(store: "B", factor: 0.9))
+        let input = PlanInput(settings: Fixtures.settings(days: 30, budget: 100_000, meals: 4), people: people,
+                              stores: [Fixtures.store("A", name: "А", km: 0.5), Fixtures.store("B", name: "Б", km: 1.5)], offers: offers, kitchen: Fixtures.fullKitchen)
+        let t0 = Date()
+        let plan = try MealPlanner().plan(input)
+        let dt = Date().timeIntervalSince(t0)
+        XCTAssertEqual(plan.meals.count, 120)
+        XCTAssertLessThan(dt, 40, "расчёт 30 дн × 6 чел × 4 приёма в debug-сборке должен укладываться в 40 с (в release — в разы быстрее)")
+    }
+}

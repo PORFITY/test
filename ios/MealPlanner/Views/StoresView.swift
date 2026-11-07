@@ -13,6 +13,8 @@ struct StoresView: View {
     @State private var detail: StoreInfo?
     @State private var filter = StoreDirectory.Filter()
     @State private var onlyCatalog = false
+    @State private var onlyFresh = false
+    @State private var onlyDelivery = false
     @State private var customRadius = ""
     @State private var addName = ""
 
@@ -23,7 +25,7 @@ struct StoresView: View {
     }
 
     private var visibleStores: [StoreInfo] {
-        var f = filter; f.onlyWithCatalog = onlyCatalog
+        var f = filter; f.onlyWithCatalog = onlyCatalog; f.onlyWithFreshPrices = onlyFresh; f.onlyDelivery = onlyDelivery
         return StoreDirectory.apply(f, to: store.state.knownStores)
     }
 
@@ -100,6 +102,8 @@ struct StoresView: View {
             Text("Фильтры").font(.system(.headline, design: .rounded))
             FlowLayout {
                 Button { onlyCatalog.toggle() } label: { Chip(text: "Только с каталогом", selected: onlyCatalog) }.buttonStyle(.plain)
+                Button { onlyFresh.toggle() } label: { Chip(text: "Свежие цены", selected: onlyFresh) }.buttonStyle(.plain)
+                Button { onlyDelivery.toggle() } label: { Chip(text: "С доставкой", selected: onlyDelivery) }.buttonStyle(.plain)
                 ForEach(chainsAvailable, id: \.self) { c in
                     Button { if filter.chains.contains(c) { filter.chains.remove(c) } else { filter.chains.insert(c) } } label: { Chip(text: c, selected: filter.chains.contains(c)) }.buttonStyle(.plain)
                 }

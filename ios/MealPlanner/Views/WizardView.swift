@@ -189,6 +189,13 @@ struct GoalStep: View {
             }
             Toggle("Если реальных цен нет — считать по ориентирам (с пометкой)", isOn: Binding(get: { store.state.draft.pricePolicy == .allowEstimates }, set: { store.state.draft.pricePolicy = $0 ? .allowEstimates : .verifiedOnly })).card()
             Toggle("Исключать товары с неизвестным составом", isOn: Binding(get: { store.state.draft.unknownComposition == .exclude }, set: { store.state.draft.unknownComposition = $0 ? .exclude : .allowWithWarning })).card()
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Как часто ходить в магазин").font(.system(.headline, design: .rounded))
+                Picker("Закупки", selection: Binding(get: { store.state.draft.stageDays ?? 0 }, set: { store.state.draft.stageDays = $0 == 0 ? nil : $0 })) {
+                    Text("Авто").tag(0); Text("Раз в 3 дня").tag(3); Text("Раз в неделю").tag(7); Text("Раз в 2 недели").tag(14)
+                }.pickerStyle(.segmented)
+                Text("Скоропортящиеся продукты не покупаются впрок: если срок хранения короче этапа, они докупаются отдельно.").font(Theme.caption).foregroundStyle(Theme.muted)
+            }.card()
             VStack(alignment: .leading) {
                 Text("Разнообразие меню").font(.system(.headline, design: .rounded))
                 Slider(value: $store.state.draft.variety, in: 0...1)
