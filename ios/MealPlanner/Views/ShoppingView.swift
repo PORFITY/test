@@ -30,7 +30,7 @@ struct ShoppingView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack { Text("Корзина").font(Theme.display(22)); Spacer(); Text(plan.basketTotal.formatted()).font(Theme.number(24)) }
                     Text("Бюджет \(plan.budget.formatted()) · остаток \(plan.remaining.formatted())").font(Theme.caption).foregroundStyle(plan.status == .overBudget ? Theme.tomato : Theme.muted)
-                    Text("Упаковки покупаются целиком; остатки на ≈ \(plan.leftoverValue.formatted()) пойдут в запас. Магазинов: \(Set(plan.purchases.map { $0.storeID }).count), заходов: \(plan.visits.count).").font(Theme.caption).foregroundStyle(Theme.muted)
+                    Text("Упаковки покупаются целиком; остатки на ≈ \(plan.leftoverValue.formatted()) пойдут в запас. " + (plan.visits.isEmpty ? "Магазин не определён (цены-ориентиры)." : "Магазинов: \(Set(plan.visits.map { $0.storeID }).count), заходов: \(plan.visits.count).")).font(Theme.caption).foregroundStyle(Theme.muted)
                     if plan.estimateShare > 0 { Label("Цены помечены «ориентир» — это не данные магазина.", systemImage: "exclamationmark.triangle.fill").font(Theme.caption).foregroundStyle(Theme.tomato) }
                     SecondaryButton(title: "Записать фактический чек", systemImage: "receipt") { showReceipt = true }
                 }.listRowBackground(Color.clear)
