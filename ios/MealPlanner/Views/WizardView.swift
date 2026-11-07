@@ -33,7 +33,16 @@ struct WizardView: View {
 
     @ViewBuilder private var stepContent: some View {
         switch step {
-        case 0: StoresView(embedded: true)
+        case 0:
+            StoresView(embedded: true)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Нет магазинов или не нужны?").font(.system(.headline, design: .rounded))
+                Text("Можно продолжить без магазинов: цены будут ориентировочными и явно помечены в результате.").font(Theme.caption).foregroundStyle(Theme.muted)
+                SecondaryButton(title: "Продолжить без магазинов (ориентиры)", systemImage: "arrow.right") {
+                    store.state.draft.pricePolicy = .allowEstimates
+                    withAnimation { step = 1 }
+                }
+            }.card()
         case 1: BudgetStep()
         case 2: AllergenStep()
         case 3: TastesStep()

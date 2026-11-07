@@ -37,22 +37,24 @@ jobs:
           xcodebuild -project MealPlanner.xcodeproj -scheme MealPlanner -configuration Debug \
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath build CODE_SIGNING_ALLOWED=NO build 2>&1 | tee build.log | grep -E "error:|warning: unre|BUILD|Compiling.*Store" | head -80
-      - name: Launch in simulator and take screenshots
+      - name: UI test in simulator (full wizard flow -> plan -> shopping -> assistant)
+        timeout-minutes: 25
         working-directory: ios/MealPlanner
         run: |
-          APP=$(find build -name "MealPlanner.app" -path "*Debug-iphonesimulator*" | head -1)
-          echo "APP=$APP"
-          DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone" | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
+          mkdir -p ../../artifacts /tmp/ui-shots
+          DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone 16 (" | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
+          [ -z "$DEVICE" ] && DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone" | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
+          echo "DEVICE=$DEVICE"
           xcrun simctl boot "$DEVICE" || true
           xcrun simctl bootstatus "$DEVICE" -b
-          xcrun simctl location "$DEVICE" set 55.7558,37.6173
-          xcrun simctl install "$DEVICE" "$APP"
-          xcrun simctl privacy "$DEVICE" grant location com.example.mealplanner || true
-          xcrun simctl launch "$DEVICE" com.example.mealplanner
-          sleep 8
-          mkdir -p ../../artifacts
-          xcrun simctl io "$DEVICE" screenshot ../../artifacts/01-launch.png
-          xcrun simctl spawn "$DEVICE" log show --last 1m --predicate 'process == "MealPlanner"' --style compact | tail -40 > ../../artifacts/app-log.txt || true
+          xcrun simctl location "$DEVICE" set 55.7558,37.6173 || true
+          set +e
+          xcodebuild -project MealPlanner.xcodeproj -scheme MealPlanner -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,id=$DEVICE" -derivedDataPath build \
+            -resultBundlePath ../../artifacts/ui-tests.xcresult CODE_SIGNING_ALLOWED=NO test 2>&1 | tee ../../artifacts/ui-test.log | grep -E "error:|Test Case|Test Suite|TEST|failed|passed" | tail -40
+          RC=${PIPESTATUS[0]}
+          cp -R /tmp/ui-shots ../../artifacts/ui-shots 2>/dev/null || true
+          exit $RC
       - name: Build unsigned IPA (for re-signing with AltStore/Sideloadly or Xcode)
         working-directory: ios/MealPlanner
         run: |

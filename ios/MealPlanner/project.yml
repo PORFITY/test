@@ -49,8 +49,22 @@ targets:
         TARGETED_DEVICE_FAMILY: "1"
         ENABLE_PREVIEWS: YES
         GENERATE_INFOPLIST_FILE: NO
+  MealPlannerUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    dependencies:
+      - target: MealPlanner
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.mealplanner.uitests
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   MealPlanner:
     build:
       targets:
         MealPlanner: all
+    test:
+      targets:
+        - MealPlannerUITests

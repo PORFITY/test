@@ -39,7 +39,19 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F6D128C0B47960EBAD3C09F7"
+               BuildableName = "MealPlannerUITests.xctest"
+               BlueprintName = "MealPlannerUITests"
+               ReferencedContainer = "container:MealPlanner.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

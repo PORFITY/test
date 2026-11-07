@@ -25,14 +25,27 @@
 		AE19B5A3EA41355FDC266A1C /* AssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEB34023B96D6667208761 /* AssistantView.swift */; };
 		B3E5A8070053FC8A7842280A /* StoreSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB300C2E3E5441A8CE8874A /* StoreSearchService.swift */; };
 		B8A0208C145C02378C171602 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8809DE1BAB9F725C7978C20A /* Keychain.swift */; };
+		D9161158002E229EB470A7BE /* WizardFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413CEDC1043782AEFDE0BD /* WizardFlowUITests.swift */; };
 		E7ECAD934F219545A2F37B6C /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C3D8610FA13D48CE6474F /* PlanView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C30E2F17324B1C208583D911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153CBAD90565AEE864DF4F46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DFF75702F8AA7F4CE31554E;
+			remoteInfo = MealPlanner;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		132A732BD9970049430725ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		14B2696FA6EBDEF13C736544 /* RecipeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViews.swift; sourceTree = "<group>"; };
 		22B777C4AE18ADC0FE1AE256 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		38ECCCD49A24C73137FA2EDB /* MealPlanner.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D6FC38E4942D5CE0B08BC8 /* MealPlannerUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MealPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49413CEDC1043782AEFDE0BD /* WizardFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardFlowUITests.swift; sourceTree = "<group>"; };
 		4CC74A5885876D889DD25A82 /* MealPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerApp.swift; sourceTree = "<group>"; };
 		5CB9EC1BB858D9DCA3FA0D54 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		68746478B9ED62F9504EB87F /* WizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardView.swift; sourceTree = "<group>"; };
@@ -88,6 +101,14 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		4634961DA0FA65BD90FC0731 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				49413CEDC1043782AEFDE0BD /* WizardFlowUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		64F39675F1172FA47A6368CB = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +117,7 @@
 				339248353656DB3069688779 /* Packages */,
 				134BD7755EEC90076BF4DD8E /* Resources */,
 				FDA121CF2FA5914F41CA596E /* Services */,
+				4634961DA0FA65BD90FC0731 /* UITests */,
 				AE3EEEBBED3A4EC9251660DA /* Views */,
 				C3DD0896B3E521327766B279 /* Products */,
 			);
@@ -131,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				38ECCCD49A24C73137FA2EDB /* MealPlanner.app */,
+				44D6FC38E4942D5CE0B08BC8 /* MealPlannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +192,22 @@
 			productReference = 38ECCCD49A24C73137FA2EDB /* MealPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F6D128C0B47960EBAD3C09F7 /* MealPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16A01721E2DAFF5D2A5F161E /* Build configuration list for PBXNativeTarget "MealPlannerUITests" */;
+			buildPhases = (
+				0931968DA00CABFE97D1EC2C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CEF74F786B88BB32C1198FD /* PBXTargetDependency */,
+			);
+			name = MealPlannerUITests;
+			productName = MealPlannerUITests;
+			productReference = 44D6FC38E4942D5CE0B08BC8 /* MealPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,6 +220,11 @@
 					6DFF75702F8AA7F4CE31554E = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
+					};
+					F6D128C0B47960EBAD3C09F7 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6DFF75702F8AA7F4CE31554E;
 					};
 				};
 			};
@@ -200,11 +244,20 @@
 			projectRoot = "";
 			targets = (
 				6DFF75702F8AA7F4CE31554E /* MealPlanner */,
+				F6D128C0B47960EBAD3C09F7 /* MealPlannerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0931968DA00CABFE97D1EC2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9161158002E229EB470A7BE /* WizardFlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B838F03CE911CFC6D200BA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +284,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CEF74F786B88BB32C1198FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DFF75702F8AA7F4CE31554E /* MealPlanner */;
+			targetProxy = C30E2F17324B1C208583D911 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		25B2311705E811CE881F1B52 /* Debug */ = {
@@ -379,6 +440,23 @@
 			};
 			name = Release;
 		};
+		88BFF8DA601EA2942842D849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mealplanner.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MealPlanner;
+			};
+			name = Release;
+		};
 		BEDD6490986061C674B8F04A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,9 +476,35 @@
 			};
 			name = Debug;
 		};
+		CDBD53744F0EE3CE269BC643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mealplanner.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MealPlanner;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		16A01721E2DAFF5D2A5F161E /* Build configuration list for PBXNativeTarget "MealPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDBD53744F0EE3CE269BC643 /* Debug */,
+				88BFF8DA601EA2942842D849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		4AD4CE0F9F30F553F4722450 /* Build configuration list for PBXProject "MealPlanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
