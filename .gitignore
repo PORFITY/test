@@ -1,0 +1,11 @@
+.build/
+*.xcuserstate
+xcuserdata/
+DerivedData/
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+backend/data/*.db
+.env
+.DS_Store
