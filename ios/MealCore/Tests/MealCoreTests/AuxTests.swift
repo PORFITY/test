@@ -222,3 +222,29 @@ final class StorageAndExportTests: XCTestCase {
         XCTAssertTrue(six.steps[3].text.contains("1,1 л") || six.steps[3].text.contains("1050") || six.steps[3].text.contains("л"), six.steps[3].text)
     }
 }
+
+final class ProfilesTests: XCTestCase {
+    func testSharedRestrictionsApplyToEveryone() {
+        var s = AppState()
+        s.shared.allergens = [.peanuts]
+        s.shared.dislikes = ["грибы"]
+        s.people = [PersonProfile(name: "Аня", allergens: [.milk])]
+        let ppl = s.effectivePeople(count: 3)
+        XCTAssertEqual(ppl.count, 3)
+        XCTAssertTrue(ppl.allSatisfy { $0.allergens.contains(.peanuts) && $0.dislikes.contains("грибы") })
+        XCTAssertTrue(ppl[0].allergens.contains(.milk)); XCTAssertFalse(ppl[1].allergens.contains(.milk))
+        XCTAssertEqual(ppl[2].name, "Человек 3")
+    }
+    func testMoneyJSONIsPlainInteger() throws {
+        let d = try JSONEncoder().encode(["a": Money.rub(12.5)])
+        XCTAssertEqual(String(data: d, encoding: .utf8), #"{"a":1250}"#)
+    }
+    func testEnergyPortionFactor() {
+        let p = PersonProfile(name: "x", sex: .male, ageYears: 30, heightCm: 180, weightKg: 80, activity: .moderate)
+        let kcal = Energy.dailyKcal(p, goal: .balanced)
+        let bmr: Double = 10.0 * 80.0 + 6.25 * 180.0 - 5.0 * 30.0 + 5.0
+        XCTAssertEqual(kcal, bmr * 1.55, accuracy: 0.1)
+        XCTAssertEqual(Energy.dailyKcal(PersonProfile(name: "y"), goal: .weightLoss), 1600, accuracy: 0.1)
+        XCTAssertEqual(Energy.portionFactor(PersonProfile(name: "y"), goal: .balanced), 1.0)
+    }
+}

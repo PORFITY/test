@@ -4,6 +4,9 @@ import Foundation
 public struct Money: Hashable, Codable, Comparable, Sendable, CustomStringConvertible {
     public var kopecks: Int
     public init(kopecks: Int) { self.kopecks = kopecks }
+    // В JSON деньги — просто целое число копеек.
+    public init(from decoder: Decoder) throws { kopecks = try decoder.singleValueContainer().decode(Int.self) }
+    public func encode(to encoder: Encoder) throws { var c = encoder.singleValueContainer(); try c.encode(kopecks) }
     public static let zero = Money(kopecks: 0)
 
     /// Из рублей (Double) с математическим округлением до копейки.

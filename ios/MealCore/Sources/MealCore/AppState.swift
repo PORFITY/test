@@ -58,7 +58,10 @@ public struct AppState: Codable, Sendable {
     public var schemaVersion: Int = 1
     public var onboardingDone: Bool = false
     public var allergensAsked: Bool = false
-    public var people: [PersonProfile] = [PersonProfile(name: "Я")]
+    /// Общие ограничения для всех участников (аллергены, нежелательные и любимые продукты).
+    public var shared: PersonProfile = PersonProfile(name: "Для всех")
+    /// Индивидуальные профили (необязательные): особенности отдельных людей.
+    public var people: [PersonProfile] = []
     public var kitchen: Kitchen = .starter
     public var kitchenConfirmed: Bool = false
     public var draft: WizardDraft = WizardDraft()
@@ -70,6 +73,9 @@ public struct AppState: Codable, Sendable {
     public var pantry: [PantryItem] = []
     public var userPrices: [UserPrice] = []
     public var importedProducts: [CatalogProduct] = []
+    /// Последние построенные предложения — нужны для офлайн-замен блюд и пересчёта без сети.
+    public var cachedOffers: [Offer] = []
+    public var cachedOffersDate: Date?
     public var plans: [MealPlan] = []
     public var currentPlanID: UUID?
     public var favoriteRecipeIDs: Set<String> = []
@@ -80,9 +86,21 @@ public struct AppState: Codable, Sendable {
     public var doneMeals: Set<String> = []
     public var chat: [ChatMessage] = []
     public var reminders: Reminders = Reminders()
-    public var lockedChoices: [String: LockedChoice] = [:]     // "d-s" → закрепление (замены пользователя)
 
     public init() {}
+
+    /// Итоговый список людей для расчёта: каждый наследует общие ограничения; недостающие — безымянные «Человек N».
+    public func effectivePeople(count: Int) -> [PersonProfile] {
+        (0..<max(1, count)).map { i in
+            var p = i < people.count ? people[i] : PersonProfile(name: "Человек \(i + 1)")
+            p.allergens.formUnion(shared.allergens)
+            p.dislikes += shared.dislikes.filter { d in !p.dislikes.contains(d) }
+            p.favorites += shared.favorites.filter { f in !p.favorites.contains(f) }
+            p.vegetarian = p.vegetarian || shared.vegetarian
+            if shared.dislikeStrictness == .strict { p.dislikeStrictness = .strict }
+            return p
+        }
+    }
 
     public var currentPlan: MealPlan? { plans.first { $0.id == currentPlanID } ?? plans.first }
     public var activeAddress: SavedAddress? { addresses.first { $0.id == activeAddressID } ?? addresses.first }
