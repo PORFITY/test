@@ -110,13 +110,15 @@ struct RecipeDetailView: View {
                     if let m = meal, !store.state.doneMeals.contains(m.id) {
                         SecondaryButton(title: "Я приготовил(а) — списать из запасов", systemImage: "checkmark") { store.confirmCooked(m) }
                     }
-                    .fullScreenCover(isPresented: $cooking) { CookModeView(rendered: rr) }
                 } else {
                     Label("Это блюдо нельзя приготовить на вашей технике и посуде. Добавьте нужную технику в настройках.", systemImage: "xmark.octagon").foregroundStyle(Theme.tomato).card()
                 }
             }.padding(20)
         }
         .screenBackground()
+        .fullScreenCover(isPresented: $cooking) {
+            if let m = method { CookModeView(rendered: RecipeRenderer.render(recipe: r, method: m, servings: servings, library: store.library)) }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) {
             Button { store.toggleFavorite(r.id) } label: { Image(systemName: store.state.favoriteRecipeIDs.contains(r.id) ? "heart.fill" : "heart") }

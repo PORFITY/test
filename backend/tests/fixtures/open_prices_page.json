@@ -1,0 +1,14 @@
+{"items":[
+ {"id":359969,"product_id":4768607,"location_id":7842,"product":{"code":"4601025120849","product_name":"Молоко питьевое пастеризованное 2.5%","product_quantity":930,"product_quantity_unit":"ml","quantity":"930 мл","brands":"Вологжанка","categories_tags":["en:milks"],"image_url":null},
+  "location":{"type":"OSM","osm_id":8297695767,"osm_type":"NODE","osm_name":"Пятёрочка","osm_brand":"Пятёрочка","osm_address_city":"Электросталь","osm_lat":55.7779002,"osm_lon":38.449731},
+  "product_code":"4601025120849","price":99.99,"price_is_discounted":false,"price_without_discount":null,"price_per":null,"currency":"RUB","location_osm_id":8297695767,"location_osm_type":"NODE","date":"2026-11-05"},
+ {"id":359970,"product":{"code":"4600819311999","product_name":"Рис круглозерный","product_quantity":900,"product_quantity_unit":"g","quantity":"900 г","brands":"Тест"},
+  "location":{"osm_id":111,"osm_type":"NODE","osm_name":"Пятёрочка","osm_brand":"Пятёрочка","osm_address_city":"Электросталь","osm_lat":55.7800,"osm_lon":38.4500},
+  "product_code":"4600819311999","price":129.5,"price_is_discounted":true,"price_without_discount":149.9,"price_per":null,"currency":"RUB","date":"2026-11-01"},
+ {"id":359971,"product":{"code":"2000000000011","product_name":"Куриное филе охлаждённое","product_quantity":800,"product_quantity_unit":"g"},
+  "location":{"osm_id":222,"osm_type":"NODE","osm_name":"Магнит","osm_brand":"Магнит","osm_address_city":"Москва","osm_lat":55.7500,"osm_lon":37.6200},
+  "product_code":"2000000000011","price":450.0,"price_per":"KILOGRAM","currency":"RUB","date":"2026-10-20"},
+ {"id":359972,"product":{"code":"2000000000028","product_name":"Гречка","product_quantity":null,"quantity":null},
+  "location":{"osm_id":222,"osm_type":"NODE","osm_name":"Магнит","osm_brand":"Магнит","osm_lat":55.7500,"osm_lon":37.6200},
+  "product_code":"2000000000028","price":90.0,"price_per":"KILOGRAM","currency":"RUB","date":"2026-10-20"}
+],"total":4,"page":1,"pages":1,"size":100}

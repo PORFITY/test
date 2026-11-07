@@ -234,8 +234,16 @@ public enum RecipeValidator {
         public var steps: [String]
         public var heat: [String]?
         public var vessels: [String]?
+        public init(name: String, meals: [String], servings: Int, prep: Int? = nil, cook: Int? = nil, ingredients: [DraftIngredient], steps: [String], heat: [String]? = nil, vessels: [String]? = nil) {
+            self.name = name; self.meals = meals; self.servings = servings; self.prep = prep; self.cook = cook
+            self.ingredients = ingredients; self.steps = steps; self.heat = heat; self.vessels = vessels
+        }
     }
-    public struct DraftIngredient: Codable, Sendable { public var key: String; public var amount: Double }
+    public struct DraftIngredient: Codable, Sendable {
+        public var key: String
+        public var amount: Double
+        public init(key: String, amount: Double) { self.key = key; self.amount = amount }
+    }
 
     public static func validate(_ d: Draft, library: Library, id: String = "user_" + UUID().uuidString.prefix(8)) -> (Recipe?, [String]) {
         var errs: [String] = []

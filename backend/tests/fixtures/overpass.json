@@ -1,0 +1,7 @@
+{"elements":[
+ {"type":"node","id":1,"lat":55.7510,"lon":37.6180,"tags":{"shop":"supermarket","name":"Магнит","brand":"Магнит","opening_hours":"08:00-23:00","addr:street":"Тестовая","addr:housenumber":"5","addr:city":"Москва"}},
+ {"type":"way","id":2,"center":{"lat":55.7600,"lon":37.6200},"tags":{"shop":"convenience","name":"Продуктовая лавка у Ивана","delivery":"yes"}},
+ {"type":"node","id":3,"lat":55.9,"lon":37.9,"tags":{"shop":"supermarket","name":"Слишком далеко"}},
+ {"type":"node","id":4,"lat":55.7512,"lon":37.6181,"tags":{"amenity":"marketplace","name":"Рынок"}},
+ {"type":"node","id":5,"tags":{"shop":"bakery"}}
+]}
