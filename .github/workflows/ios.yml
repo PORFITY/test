@@ -38,20 +38,16 @@ jobs:
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath build CODE_SIGNING_ALLOWED=NO build 2>&1 | tee build.log | grep -E "error:|warning: unre|BUILD|Compiling.*Store" | head -80
       - name: UI test in simulator (full wizard flow -> plan -> shopping -> assistant)
-        timeout-minutes: 25
+        timeout-minutes: 30
         working-directory: ios/MealPlanner
         run: |
           mkdir -p ../../artifacts /tmp/ui-shots
-          DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone 16 (" | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
-          [ -z "$DEVICE" ] && DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone" | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
-          echo "DEVICE=$DEVICE"
-          xcrun simctl boot "$DEVICE" || true
-          xcrun simctl bootstatus "$DEVICE" -b
-          xcrun simctl location "$DEVICE" set 55.7558,37.6173 || true
+          xcrun simctl list devices available | grep -E "iPhone" | head -5
           set +e
           xcodebuild -project MealPlanner.xcodeproj -scheme MealPlanner -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,id=$DEVICE" -derivedDataPath build \
-            -resultBundlePath ../../artifacts/ui-tests.xcresult CODE_SIGNING_ALLOWED=NO test 2>&1 | tee ../../artifacts/ui-test.log | grep -E "error:|Test Case|Test Suite|TEST|failed|passed" | tail -40
+            -destination 'platform=iOS Simulator,name=iPhone 16' -derivedDataPath build \
+            -parallel-testing-enabled NO -test-timeouts-enabled YES -default-test-execution-time-allowance 600 -maximum-test-execution-time-allowance 900 \
+            -resultBundlePath ../../artifacts/ui-tests.xcresult CODE_SIGNING_ALLOWED=NO test 2>&1 | tee ../../artifacts/ui-test.log | grep -E "error:|Test Case|Test Suite|TEST|failed|passed|Testing" | tail -40
           RC=${PIPESTATUS[0]}
           cp -R /tmp/ui-shots ../../artifacts/ui-shots 2>/dev/null || true
           exit $RC
