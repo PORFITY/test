@@ -1,0 +1,1634 @@
+{
+ "_comment": "Справочник ингредиентов. Пищевая ценность — типичные значения на 100 г сырого продукта (справочные таблицы: Скурихин/Тутельян, USDA FoodData Central), округлены. Для конкретного товара из каталога приоритет у данных с упаковки/Open Food Facts. unit: g|ml|pcs (базовая единица закупки и рецептов). dens — г/мл для ml. pcsG — масса штуки, г. shelf — безопасный срок хранения после покупки, сут. frozen — срок при заморозке, сут (0 — не замораживать). tsp/tbsp/cup — граммов в чайной/столовой ложке/стакане 250 мл. kw — ключевые слова для сопоставления с товарами (по началу слова), ex — слова-исключения.",
+ "items": [
+  {
+   "key": "rice",
+   "name": "Рис",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 344,
+   "p": 6.7,
+   "f": 0.7,
+   "c": 78.9,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "cup": 210,
+   "kw": [
+    "рис=",
+    "rice="
+   ],
+   "ex": [
+    "рисов",
+    "мука",
+    "хлопья",
+    "лапша",
+    "уксус",
+    "бумага",
+    "чипс",
+    "рисовая",
+    "напиток",
+    "wafer",
+    "cake",
+    "chips",
+    "noodle",
+    "vinegar",
+    "flour"
+   ]
+  },
+  {
+   "key": "buckwheat",
+   "name": "Гречка",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 313,
+   "p": 12.6,
+   "f": 3.3,
+   "c": 62.1,
+   "shelf": 540,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "cup": 210,
+   "kw": [
+    "греч",
+    "buckwheat"
+   ],
+   "ex": [
+    "мука",
+    "хлопья",
+    "лапша",
+    "блин",
+    "flour",
+    "noodle",
+    "печень"
+   ]
+  },
+  {
+   "key": "oats",
+   "name": "Овсяные хлопья",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 352,
+   "p": 12.3,
+   "f": 6.2,
+   "c": 61.8,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "gluten"
+   ],
+   "cup": 90,
+   "kw": [
+    "овсян",
+    "геркулес",
+    "oat",
+    "овсяные хлопья"
+   ],
+   "ex": [
+    "печенье",
+    "батончик",
+    "мюсли",
+    "молоко",
+    "напиток",
+    "cookie",
+    "bar",
+    "milk",
+    "drink"
+   ]
+  },
+  {
+   "key": "pasta",
+   "name": "Макароны",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 337,
+   "p": 10.4,
+   "f": 1.1,
+   "c": 69.7,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "cup": 110,
+   "kw": [
+    "макарон",
+    "спагетти",
+    "паста",
+    "вермишел",
+    "рожки",
+    "перья",
+    "фузилли",
+    "pasta",
+    "spaghetti"
+   ],
+   "ex": [
+    "соус",
+    "готов",
+    "сыр",
+    "sauce",
+    "instant",
+    "быстрого"
+   ]
+  },
+  {
+   "key": "millet",
+   "name": "Пшено",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 348,
+   "p": 11.5,
+   "f": 3.3,
+   "c": 69.3,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "cup": 220,
+   "kw": [
+    "пшено",
+    "millet"
+   ],
+   "ex": []
+  },
+  {
+   "key": "semolina",
+   "name": "Манная крупа",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 328,
+   "p": 10.3,
+   "f": 1.0,
+   "c": 67.4,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "cup": 200,
+   "kw": [
+    "манн",
+    "semolina"
+   ],
+   "ex": []
+  },
+  {
+   "key": "lentils",
+   "name": "Чечевица",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 295,
+   "p": 24.0,
+   "f": 1.5,
+   "c": 46.3,
+   "shelf": 540,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "cup": 220,
+   "kw": [
+    "чечевиц",
+    "lentil"
+   ],
+   "ex": []
+  },
+  {
+   "key": "flour",
+   "name": "Мука пшеничная",
+   "unit": "g",
+   "cat": "grain",
+   "kcal": 334,
+   "p": 10.3,
+   "f": 1.1,
+   "c": 68.9,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "tsp": 3,
+   "tbsp": 10,
+   "cup": 130,
+   "kw": [
+    "мука пшенич",
+    "мука=",
+    "flour="
+   ],
+   "ex": [
+    "рисов",
+    "кукуруз",
+    "гречнев",
+    "миндал",
+    "ржан",
+    "овсян",
+    "кокос",
+    "нутов"
+   ]
+  },
+  {
+   "key": "bread",
+   "name": "Хлеб",
+   "unit": "g",
+   "cat": "bakery",
+   "kcal": 242,
+   "p": 8.1,
+   "f": 1.0,
+   "c": 48.8,
+   "shelf": 4,
+   "frozen": 60,
+   "store": "pantry",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "pcsG": 30,
+   "kw": [
+    "хлеб",
+    "батон",
+    "bread",
+    "loaf"
+   ],
+   "ex": [
+    "хлебцы",
+    "сухар",
+    "крошк",
+    "квас",
+    "панировоч"
+   ]
+  },
+  {
+   "key": "potato",
+   "name": "Картофель",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 77,
+   "p": 2.0,
+   "f": 0.4,
+   "c": 16.3,
+   "shelf": 21,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "pcsG": 100,
+   "kw": [
+    "картофел",
+    "картошк",
+    "potato"
+   ],
+   "ex": [
+    "чипс",
+    "фри",
+    "пюре",
+    "chips",
+    "fries",
+    "крахмал",
+    "starch",
+    "хлопья"
+   ]
+  },
+  {
+   "key": "carrot",
+   "name": "Морковь",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 32,
+   "p": 1.3,
+   "f": 0.1,
+   "c": 6.9,
+   "shelf": 21,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 100,
+   "kw": [
+    "морков",
+    "carrot"
+   ],
+   "ex": [
+    "корейск",
+    "салат",
+    "сок",
+    "juice",
+    "пюре"
+   ]
+  },
+  {
+   "key": "onion",
+   "name": "Лук репчатый",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 47,
+   "p": 1.4,
+   "f": 0.0,
+   "c": 10.4,
+   "shelf": 30,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "pcsG": 100,
+   "kw": [
+    "лук репч",
+    "лук=",
+    "onion"
+   ],
+   "ex": [
+    "зелен",
+    "порей",
+    "шалот",
+    "чесн",
+    "маринован",
+    "сушен",
+    "green",
+    "leek",
+    "rings",
+    "кольца",
+    "жарен"
+   ]
+  },
+  {
+   "key": "cabbage",
+   "name": "Капуста белокочанная",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 28,
+   "p": 1.8,
+   "f": 0.2,
+   "c": 4.7,
+   "shelf": 30,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "капуст белок",
+    "капуста белок",
+    "капуста",
+    "cabbage"
+   ],
+   "ex": [
+    "цветн",
+    "брокк",
+    "морск",
+    "квашен",
+    "кольраби",
+    "пекин",
+    "краснокоч",
+    "брюссел",
+    "кимчи",
+    "cauliflower",
+    "sauerkraut",
+    "kimchi"
+   ]
+  },
+  {
+   "key": "tomato",
+   "name": "Помидоры",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 20,
+   "p": 1.1,
+   "f": 0.2,
+   "c": 3.7,
+   "shelf": 7,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 120,
+   "kw": [
+    "помидор",
+    "томат свеж",
+    "томаты",
+    "tomato"
+   ],
+   "ex": [
+    "паста",
+    "сок",
+    "соус",
+    "кетчуп",
+    "консерв",
+    "в собств",
+    "сушен",
+    "juice",
+    "paste",
+    "sauce",
+    "ketchup",
+    "canned",
+    "пюре"
+   ]
+  },
+  {
+   "key": "cucumber",
+   "name": "Огурцы",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 14,
+   "p": 0.8,
+   "f": 0.1,
+   "c": 2.5,
+   "shelf": 5,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 120,
+   "kw": [
+    "огурц",
+    "cucumber"
+   ],
+   "ex": [
+    "солен",
+    "маринован",
+    "консерв",
+    "pickle",
+    "gherkin"
+   ]
+  },
+  {
+   "key": "bell_pepper",
+   "name": "Перец болгарский",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 27,
+   "p": 1.3,
+   "f": 0.0,
+   "c": 5.3,
+   "shelf": 7,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 150,
+   "kw": [
+    "перец болг",
+    "перец сладк",
+    "перец",
+    "bell pepper"
+   ],
+   "ex": [
+    "молот",
+    "черн",
+    "чили",
+    "горош",
+    "острый",
+    "соус",
+    "паприка",
+    "ground",
+    "black",
+    "chili"
+   ]
+  },
+  {
+   "key": "beet",
+   "name": "Свёкла",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 40,
+   "p": 1.5,
+   "f": 0.1,
+   "c": 8.8,
+   "shelf": 30,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 200,
+   "kw": [
+    "свекл",
+    "свёкл",
+    "beet"
+   ],
+   "ex": [
+    "салат",
+    "сок",
+    "juice"
+   ]
+  },
+  {
+   "key": "zucchini",
+   "name": "Кабачки",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 24,
+   "p": 0.6,
+   "f": 0.3,
+   "c": 4.6,
+   "shelf": 7,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 300,
+   "kw": [
+    "кабачк",
+    "цукини",
+    "zucchini"
+   ],
+   "ex": [
+    "икра",
+    "caviar"
+   ]
+  },
+  {
+   "key": "garlic",
+   "name": "Чеснок",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 143,
+   "p": 6.5,
+   "f": 0.5,
+   "c": 29.9,
+   "shelf": 60,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "pcsG": 5,
+   "kw": [
+    "чеснок",
+    "garlic"
+   ],
+   "ex": [
+    "соус",
+    "порошок",
+    "гранул",
+    "powder",
+    "sauce"
+   ]
+  },
+  {
+   "key": "apple",
+   "name": "Яблоки",
+   "unit": "g",
+   "cat": "fruit",
+   "kcal": 47,
+   "p": 0.4,
+   "f": 0.4,
+   "c": 9.8,
+   "shelf": 21,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "pcsG": 150,
+   "kw": [
+    "яблок",
+    "яблоч",
+    "apple"
+   ],
+   "ex": [
+    "сок",
+    "пюре",
+    "чипс",
+    "уксус",
+    "juice",
+    "vinegar",
+    "puree"
+   ]
+  },
+  {
+   "key": "banana",
+   "name": "Бананы",
+   "unit": "g",
+   "cat": "fruit",
+   "kcal": 96,
+   "p": 1.5,
+   "f": 0.5,
+   "c": 21.0,
+   "shelf": 5,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "pcsG": 120,
+   "kw": [
+    "банан",
+    "banana"
+   ],
+   "ex": [
+    "чипс",
+    "сок",
+    "chips",
+    "juice",
+    "детск"
+   ]
+  },
+  {
+   "key": "greens",
+   "name": "Зелень (укроп/петрушка)",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 45,
+   "p": 3.1,
+   "f": 0.4,
+   "c": 7.0,
+   "shelf": 5,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "укроп",
+    "петрушк",
+    "зелень",
+    "dill",
+    "parsley"
+   ],
+   "ex": [
+    "сушен",
+    "dried",
+    "приправ",
+    "лук зел"
+   ]
+  },
+  {
+   "key": "canned_corn",
+   "name": "Кукуруза консервированная",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 119,
+   "p": 4.1,
+   "f": 1.0,
+   "c": 22.5,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "kw": [
+    "кукуруз сахарн",
+    "кукуруза консерв",
+    "кукуруза",
+    "corn"
+   ],
+   "ex": [
+    "мука",
+    "крупа",
+    "масло",
+    "палочки",
+    "хлопья",
+    "flour",
+    "oil",
+    "flakes",
+    "popcorn",
+    "попкорн"
+   ]
+  },
+  {
+   "key": "canned_peas",
+   "name": "Горошек зелёный консервированный",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 55,
+   "p": 5.0,
+   "f": 0.2,
+   "c": 8.3,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "kw": [
+    "горошек",
+    "green peas"
+   ],
+   "ex": [
+    "душист",
+    "черн",
+    "перец",
+    "сухой",
+    "колот"
+   ]
+  },
+  {
+   "key": "canned_beans",
+   "name": "Фасоль консервированная",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 123,
+   "p": 7.8,
+   "f": 0.5,
+   "c": 21.5,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "kw": [
+    "фасол",
+    "beans"
+   ],
+   "ex": [
+    "стручков",
+    "спаржев",
+    "соус",
+    "sauce"
+   ]
+  },
+  {
+   "key": "canned_tomato",
+   "name": "Томаты в собственном соку",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 24,
+   "p": 1.2,
+   "f": 0.2,
+   "c": 4.0,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "kw": [
+    "томаты в собствен",
+    "помидоры в собствен",
+    "томаты рубленые",
+    "помидоры рубленые",
+    "tomatoes chopped",
+    "томаты очищ"
+   ],
+   "ex": [
+    "паста",
+    "кетчуп",
+    "соус"
+   ]
+  },
+  {
+   "key": "tomato_paste",
+   "name": "Томатная паста",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 92,
+   "p": 4.8,
+   "f": 1.5,
+   "c": 16.7,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tbsp": 25,
+   "tsp": 8,
+   "kw": [
+    "томатная паста",
+    "паста томатн",
+    "tomato paste"
+   ],
+   "ex": []
+  },
+  {
+   "key": "chicken_breast",
+   "name": "Куриное филе (грудка)",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 113,
+   "p": 23.6,
+   "f": 1.9,
+   "c": 0.4,
+   "shelf": 2,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "филе кур",
+    "грудка кур",
+    "куриное филе",
+    "филе грудки",
+    "грудка цып",
+    "филе цып",
+    "chicken breast"
+   ],
+   "ex": [
+    "копче",
+    "варен",
+    "наггетс",
+    "колбас",
+    "хлебц",
+    "корм",
+    "паштет",
+    "smoked",
+    "nugget"
+   ]
+  },
+  {
+   "key": "chicken_thigh",
+   "name": "Куриное бедро (филе бедра)",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 121,
+   "p": 19.7,
+   "f": 4.1,
+   "c": 0.0,
+   "shelf": 2,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "бедро кур",
+    "бедра кур",
+    "филе бедра",
+    "бедро цып",
+    "окорочок",
+    "chicken thigh"
+   ],
+   "ex": [
+    "копче",
+    "наггетс",
+    "smoked",
+    "nugget"
+   ]
+  },
+  {
+   "key": "chicken_liver",
+   "name": "Куриная печень",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 140,
+   "p": 19.1,
+   "f": 6.3,
+   "c": 0.7,
+   "shelf": 2,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "печень кур",
+    "печень цып",
+    "chicken liver"
+   ],
+   "ex": [
+    "паштет",
+    "pate"
+   ]
+  },
+  {
+   "key": "ground_beef",
+   "name": "Фарш говяжий",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 209,
+   "p": 18.6,
+   "f": 14.0,
+   "c": 0.0,
+   "shelf": 1,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "фарш говя",
+    "говяж фарш",
+    "ground beef"
+   ],
+   "ex": [
+    "свин",
+    "смешан",
+    "котлет"
+   ]
+  },
+  {
+   "key": "mixed_mince",
+   "name": "Фарш говяжье-свиной",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 263,
+   "p": 16.7,
+   "f": 21.2,
+   "c": 0.0,
+   "shelf": 1,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "фарш",
+    "мясной фарш",
+    "mince"
+   ],
+   "ex": [
+    "куриный",
+    "индейк",
+    "котлет",
+    "пельмен",
+    "полуфабрикат",
+    "dumpling",
+    "курин"
+   ]
+  },
+  {
+   "key": "beef",
+   "name": "Говядина",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 187,
+   "p": 18.9,
+   "f": 12.4,
+   "c": 0.0,
+   "shelf": 3,
+   "frozen": 120,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "говядин",
+    "beef"
+   ],
+   "ex": [
+    "фарш",
+    "тушен",
+    "консерв",
+    "колбас",
+    "варен",
+    "копче",
+    "стейк",
+    "корм",
+    "stew",
+    "ground"
+   ]
+  },
+  {
+   "key": "pork",
+   "name": "Свинина",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 259,
+   "p": 16.0,
+   "f": 21.6,
+   "c": 0.0,
+   "shelf": 3,
+   "frozen": 120,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "свинин",
+    "свиная шея",
+    "свиная лопатка",
+    "pork"
+   ],
+   "ex": [
+    "фарш",
+    "тушен",
+    "консерв",
+    "колбас",
+    "копче",
+    "сало",
+    "stew",
+    "ground",
+    "bacon"
+   ]
+  },
+  {
+   "key": "sausage",
+   "name": "Сосиски",
+   "unit": "g",
+   "cat": "meat",
+   "kcal": 266,
+   "p": 11.0,
+   "f": 24.0,
+   "c": 1.6,
+   "shelf": 10,
+   "frozen": 60,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "kw": [
+    "сосиск",
+    "sausage",
+    "сардельк"
+   ],
+   "ex": [
+    "тесте",
+    "vegan",
+    "веган"
+   ]
+  },
+  {
+   "key": "mushrooms",
+   "name": "Шампиньоны",
+   "unit": "g",
+   "cat": "veg",
+   "kcal": 27,
+   "p": 4.3,
+   "f": 1.0,
+   "c": 0.1,
+   "shelf": 5,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [],
+   "kw": [
+    "шампиньон",
+    "грибы свеж",
+    "гриб",
+    "mushroom"
+   ],
+   "ex": [
+    "маринован",
+    "консерв",
+    "сушен",
+    "соус",
+    "суп",
+    "pickled",
+    "canned",
+    "dried"
+   ]
+  },
+  {
+   "key": "pollock",
+   "name": "Филе минтая / белой рыбы",
+   "unit": "g",
+   "cat": "fish",
+   "kcal": 72,
+   "p": 15.9,
+   "f": 0.9,
+   "c": 0.0,
+   "shelf": 3,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [
+    "fish"
+   ],
+   "kw": [
+    "минта",
+    "хек",
+    "треск",
+    "филе рыб",
+    "филе белой",
+    "pollock",
+    "cod fillet",
+    "hake"
+   ],
+   "ex": [
+    "консерв",
+    "паштет",
+    "котлет",
+    "палочк",
+    "наггетс",
+    "пельмен",
+    "в кляр",
+    "сурими",
+    "икра",
+    "печень"
+   ]
+  },
+  {
+   "key": "pink_salmon",
+   "name": "Горбуша / красная рыба",
+   "unit": "g",
+   "cat": "fish",
+   "kcal": 140,
+   "p": 20.5,
+   "f": 6.5,
+   "c": 0.0,
+   "shelf": 3,
+   "frozen": 90,
+   "store": "fridge",
+   "allergens": [
+    "fish"
+   ],
+   "kw": [
+    "горбуш",
+    "лосос",
+    "форел",
+    "сёмг",
+    "семг",
+    "salmon",
+    "trout"
+   ],
+   "ex": [
+    "консерв",
+    "копче",
+    "солен",
+    "слабосол",
+    "паштет",
+    "canned",
+    "smoked",
+    "салат"
+   ]
+  },
+  {
+   "key": "canned_tuna",
+   "name": "Тунец консервированный",
+   "unit": "g",
+   "cat": "canned",
+   "kcal": 96,
+   "p": 21.0,
+   "f": 1.0,
+   "c": 0.0,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "fish"
+   ],
+   "kw": [
+    "тунец",
+    "tuna"
+   ],
+   "ex": [
+    "салат"
+   ]
+  },
+  {
+   "key": "shrimp",
+   "name": "Креветки",
+   "unit": "g",
+   "cat": "fish",
+   "kcal": 87,
+   "p": 18.0,
+   "f": 1.1,
+   "c": 0.0,
+   "shelf": 180,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "shellfish"
+   ],
+   "kw": [
+    "креветк",
+    "shrimp",
+    "prawn"
+   ],
+   "ex": [
+    "чипс",
+    "chips",
+    "салат",
+    "паста",
+    "крекер"
+   ]
+  },
+  {
+   "key": "egg",
+   "name": "Яйца куриные",
+   "unit": "pcs",
+   "cat": "egg",
+   "kcal": 157,
+   "p": 12.7,
+   "f": 11.5,
+   "c": 0.7,
+   "shelf": 21,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "eggs"
+   ],
+   "pcsG": 55,
+   "kw": [
+    "яйц",
+    "яиц",
+    "egg"
+   ],
+   "ex": [
+    "пасх",
+    "перепел",
+    "шоколад",
+    "киндер",
+    "лапша",
+    "майонез",
+    "краск",
+    "макарон",
+    "quail",
+    "chocolate",
+    "mayo",
+    "noodle",
+    "заменитель"
+   ]
+  },
+  {
+   "key": "milk",
+   "name": "Молоко",
+   "unit": "ml",
+   "cat": "dairy",
+   "kcal": 52,
+   "p": 2.8,
+   "f": 2.5,
+   "c": 4.7,
+   "dens": 1.03,
+   "shelf": 7,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "kw": [
+    "молоко",
+    "milk"
+   ],
+   "ex": [
+    "сгущ",
+    "сух",
+    "кокос",
+    "миндал",
+    "овсян",
+    "соев",
+    "рисов",
+    "шоколад",
+    "коктейль",
+    "condensed",
+    "powder",
+    "coconut",
+    "almond",
+    "oat",
+    "soy",
+    "chocolate",
+    "козье"
+   ]
+  },
+  {
+   "key": "kefir",
+   "name": "Кефир",
+   "unit": "ml",
+   "cat": "dairy",
+   "kcal": 53,
+   "p": 2.9,
+   "f": 2.5,
+   "c": 4.0,
+   "dens": 1.03,
+   "shelf": 7,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "kw": [
+    "кефир",
+    "kefir"
+   ],
+   "ex": [
+    "сыр",
+    "йогурт"
+   ]
+  },
+  {
+   "key": "sour_cream",
+   "name": "Сметана 15%",
+   "unit": "g",
+   "cat": "dairy",
+   "kcal": 162,
+   "p": 2.6,
+   "f": 15.0,
+   "c": 3.0,
+   "shelf": 10,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "tbsp": 25,
+   "tsp": 10,
+   "kw": [
+    "сметан",
+    "sour cream"
+   ],
+   "ex": [
+    "соус",
+    "sauce",
+    "чипс",
+    "chips"
+   ]
+  },
+  {
+   "key": "cottage_cheese",
+   "name": "Творог 5%",
+   "unit": "g",
+   "cat": "dairy",
+   "kcal": 145,
+   "p": 17.2,
+   "f": 5.0,
+   "c": 1.8,
+   "shelf": 5,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "kw": [
+    "творог",
+    "cottage cheese",
+    "quark"
+   ],
+   "ex": [
+    "сырок",
+    "глазирован",
+    "десерт",
+    "запеканк",
+    "dessert",
+    "curd bar",
+    "сырки",
+    "масса"
+   ]
+  },
+  {
+   "key": "cheese",
+   "name": "Сыр твёрдый",
+   "unit": "g",
+   "cat": "dairy",
+   "kcal": 363,
+   "p": 23.4,
+   "f": 29.5,
+   "c": 0.0,
+   "shelf": 30,
+   "frozen": 0,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "kw": [
+    "сыр=",
+    "сыр",
+    "cheese"
+   ],
+   "ex": [
+    "плавлен",
+    "творожн",
+    "сырок",
+    "сырки",
+    "чипс",
+    "соус",
+    "крем",
+    "кот",
+    "cream cheese",
+    "processed",
+    "spread",
+    "сырная",
+    "сырный"
+   ]
+  },
+  {
+   "key": "butter",
+   "name": "Масло сливочное",
+   "unit": "g",
+   "cat": "dairy",
+   "kcal": 748,
+   "p": 0.5,
+   "f": 82.5,
+   "c": 0.8,
+   "shelf": 30,
+   "frozen": 180,
+   "store": "fridge",
+   "allergens": [
+    "milk"
+   ],
+   "tsp": 5,
+   "tbsp": 17,
+   "kw": [
+    "масло сливоч",
+    "масло слив",
+    "butter"
+   ],
+   "ex": [
+    "арахис",
+    "шоколад",
+    "peanut",
+    "какао",
+    "cocoa",
+    "shea",
+    "ши"
+   ]
+  },
+  {
+   "key": "sunflower_oil",
+   "name": "Масло подсолнечное",
+   "unit": "ml",
+   "cat": "oil",
+   "kcal": 899,
+   "p": 0.0,
+   "f": 99.9,
+   "c": 0.0,
+   "dens": 0.92,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 4.6,
+   "tbsp": 14,
+   "kw": [
+    "масло подсолнеч",
+    "масло растител",
+    "sunflower oil",
+    "vegetable oil"
+   ],
+   "ex": [
+    "оливк",
+    "кукуруз",
+    "льнян",
+    "кунжут",
+    "горчич",
+    "olive"
+   ]
+  },
+  {
+   "key": "sugar",
+   "name": "Сахар",
+   "unit": "g",
+   "cat": "sweet",
+   "kcal": 399,
+   "p": 0.0,
+   "f": 0.0,
+   "c": 99.8,
+   "shelf": 1000,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 7,
+   "tbsp": 20,
+   "cup": 200,
+   "kw": [
+    "сахар",
+    "sugar"
+   ],
+   "ex": [
+    "пудр",
+    "ванильн",
+    "тростник",
+    "кокос",
+    "powder",
+    "vanilla",
+    "cane",
+    "coconut",
+    "заменитель"
+   ]
+  },
+  {
+   "key": "honey",
+   "name": "Мёд",
+   "unit": "g",
+   "cat": "sweet",
+   "kcal": 329,
+   "p": 0.8,
+   "f": 0.0,
+   "c": 81.5,
+   "shelf": 720,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 10,
+   "tbsp": 30,
+   "kw": [
+    "мед=",
+    "honey="
+   ],
+   "ex": [
+    "медовик",
+    "медов",
+    "honey cake"
+   ]
+  },
+  {
+   "key": "salt",
+   "name": "Соль",
+   "unit": "g",
+   "cat": "spice",
+   "kcal": 0,
+   "p": 0.0,
+   "f": 0.0,
+   "c": 0.0,
+   "shelf": 1800,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 7,
+   "tbsp": 20,
+   "kw": [
+    "соль",
+    "salt"
+   ],
+   "ex": [
+    "для ванн",
+    "ванн",
+    "bath",
+    "iodized snack"
+   ]
+  },
+  {
+   "key": "black_pepper",
+   "name": "Перец чёрный молотый",
+   "unit": "g",
+   "cat": "spice",
+   "kcal": 251,
+   "p": 10.4,
+   "f": 3.3,
+   "c": 64.0,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 2.5,
+   "kw": [
+    "перец черн",
+    "перец молот",
+    "black pepper"
+   ],
+   "ex": []
+  },
+  {
+   "key": "bay_leaf",
+   "name": "Лавровый лист",
+   "unit": "g",
+   "cat": "spice",
+   "kcal": 313,
+   "p": 7.6,
+   "f": 8.4,
+   "c": 75.0,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "kw": [
+    "лавров",
+    "bay leaf"
+   ],
+   "ex": []
+  },
+  {
+   "key": "paprika",
+   "name": "Паприка молотая",
+   "unit": "g",
+   "cat": "spice",
+   "kcal": 282,
+   "p": 14.1,
+   "f": 12.9,
+   "c": 54.0,
+   "shelf": 730,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [],
+   "tsp": 2.5,
+   "kw": [
+    "паприка",
+    "paprika"
+   ],
+   "ex": [
+    "чипс",
+    "chips",
+    "соус"
+   ]
+  },
+  {
+   "key": "soy_sauce",
+   "name": "Соевый соус",
+   "unit": "ml",
+   "cat": "sauce",
+   "kcal": 53,
+   "p": 8.1,
+   "f": 0.6,
+   "c": 4.9,
+   "dens": 1.15,
+   "shelf": 365,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "soy",
+    "wheat",
+    "gluten"
+   ],
+   "tsp": 6,
+   "tbsp": 18,
+   "kw": [
+    "соевый соус",
+    "соус соев",
+    "soy sauce"
+   ],
+   "ex": []
+  },
+  {
+   "key": "peanut_butter",
+   "name": "Арахисовая паста",
+   "unit": "g",
+   "cat": "nuts",
+   "kcal": 588,
+   "p": 25.1,
+   "f": 50.4,
+   "c": 19.6,
+   "shelf": 180,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "peanuts"
+   ],
+   "tsp": 8,
+   "tbsp": 16,
+   "kw": [
+    "арахисов",
+    "peanut butter"
+   ],
+   "ex": []
+  },
+  {
+   "key": "walnuts",
+   "name": "Грецкие орехи",
+   "unit": "g",
+   "cat": "nuts",
+   "kcal": 654,
+   "p": 15.2,
+   "f": 65.2,
+   "c": 13.7,
+   "shelf": 180,
+   "frozen": 0,
+   "store": "pantry",
+   "allergens": [
+    "tree_nuts"
+   ],
+   "kw": [
+    "грецк",
+    "walnut"
+   ],
+   "ex": [
+    "масло",
+    "oil",
+    "паста"
+   ]
+  }
+ ]
+}
